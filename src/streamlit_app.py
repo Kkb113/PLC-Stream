@@ -1,13 +1,20 @@
 from __future__ import annotations
 
 import math
+import os
+import sys
 from dataclasses import dataclass
+from pathlib import Path
 
 import streamlit as st
 
-from .generator import TelemetryGenerator, load_assets
-from .plc_simulator import PLCSimulator
-from .sinks import EventHubSink
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from src.generator import TelemetryGenerator, load_assets
+from src.plc_simulator import PLCSimulator
+from src.sinks import EventHubSink
 
 
 DEFAULT_INTERVAL_SECONDS = 5.0
@@ -33,6 +40,7 @@ class StreamlitRunConfig:
 
 
 def run_eventhub_stream(config: StreamlitRunConfig) -> int:
+    load_streamlit_secrets_into_env()
     assets = load_assets(site_count=config.site_count, assets_per_site=config.assets_per_site)
     generator = TelemetryGenerator(format_type="JSON")
 
@@ -46,6 +54,16 @@ def run_eventhub_stream(config: StreamlitRunConfig) -> int:
             realtime=False,
         )
         return simulator.run()
+
+
+def load_streamlit_secrets_into_env() -> None:
+    for key in ("AZURE_EVENTHUB_CONNECTION_STRING", "AZURE_EVENTHUB_NAME"):
+        try:
+            value = st.secrets.get(key)
+        except Exception:
+            value = None
+        if value and not os.environ.get(key):
+            os.environ[key] = str(value)
 
 
 def main() -> None:

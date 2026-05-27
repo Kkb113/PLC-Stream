@@ -149,6 +149,15 @@ streamlit run streamlit_app.py
 
 Use the duration field to choose how many minutes of PLC telemetry to send.
 
+For Streamlit Community Cloud, add these values under app secrets:
+
+```toml
+AZURE_EVENTHUB_CONNECTION_STRING = "Endpoint=sb://..."
+AZURE_EVENTHUB_NAME = "ehub-ecotecco-plc-telemetry"
+```
+
+Use `streamlit_app.py` as the app entry point. The app also supports `src/streamlit_app.py` if that path is selected by mistake.
+
 ## Routing Fields For Fabric Eventstream
 
 The simulator emits routing fields used later by Fabric Eventstream to route records into industry-specific Bronze tables:
