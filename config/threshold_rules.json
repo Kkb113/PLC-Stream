@@ -1,0 +1,37 @@
+{
+  "ch4_pct": {
+    "normal": { "min": 50, "max": 70 },
+    "warning": { "below": 45, "above": 75 },
+    "critical": { "below": 40, "above": 80 }
+  },
+  "co2_pct": {
+    "normal": { "min": 25, "max": 45 },
+    "warning": { "above": 48 },
+    "critical": { "above": 55 }
+  },
+  "o2_pct": {
+    "normal": { "min": 0, "max": 2 },
+    "warning": { "above": 2 },
+    "critical": { "above": 5 }
+  },
+  "h2s_ppm": {
+    "normal": { "min": 0, "max": 300 },
+    "warning": { "above": 500 },
+    "critical": { "above": 1000 }
+  },
+  "temperature_c": {
+    "normal": { "min": 32, "max": 40 },
+    "warning": { "below": 30, "above": 42 },
+    "critical": { "below": 25, "above": 48 }
+  },
+  "static_pressure_kpa": {
+    "normal": { "min": 5, "max": 20 },
+    "warning": { "below": 3, "above": 25 },
+    "critical": { "below": 1, "above": 35 }
+  },
+  "gas_flow_nm3_h": {
+    "normal": { "min": 40, "max": 120 },
+    "warning": { "below": 25, "above": 140 },
+    "critical": { "below": 10, "above": 180 }
+  }
+}

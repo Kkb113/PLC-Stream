@@ -1,0 +1,79 @@
+{
+  "sites": [
+    {
+      "site_id": "SITE-001",
+      "site_name": "North Biogas Facility",
+      "industry_type": "Biogas",
+      "region": "North",
+      "site_type": "Biogas Facility",
+      "assets": [
+        {
+          "asset_id": "DIGESTER-01",
+          "asset_type": "Anaerobic Digester",
+          "plc_id": "PLC-001",
+          "sensor_package_id": "GAS-ANALYZER-001",
+          "waste_stream": "Wet Food Waste",
+          "process_area": "Biogas Generation"
+        },
+        {
+          "asset_id": "SKID-01",
+          "asset_type": "Biogas Upgrading Skid",
+          "plc_id": "PLC-002",
+          "sensor_package_id": "GAS-ANALYZER-002",
+          "waste_stream": "Mixed Organic Waste",
+          "process_area": "Gas Conditioning"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-002",
+      "site_name": "West Wastewater Works",
+      "industry_type": "Wastewater",
+      "region": "West",
+      "site_type": "Wastewater Treatment Plant",
+      "assets": [
+        {
+          "asset_id": "TANK-01",
+          "asset_type": "Wastewater Process Tank",
+          "plc_id": "PLC-003",
+          "sensor_package_id": "GAS-ANALYZER-003",
+          "waste_stream": "Primary Sludge",
+          "process_area": "Wastewater Treatment"
+        },
+        {
+          "asset_id": "DIGESTER-02",
+          "asset_type": "Anaerobic Digester",
+          "plc_id": "PLC-004",
+          "sensor_package_id": "GAS-ANALYZER-004",
+          "waste_stream": "Sewage Sludge",
+          "process_area": "Sludge Digestion"
+        }
+      ]
+    },
+    {
+      "site_id": "SITE-003",
+      "site_name": "South Landfill Gas Field",
+      "industry_type": "LandfillGas",
+      "region": "South",
+      "site_type": "Landfill Gas Field",
+      "assets": [
+        {
+          "asset_id": "WELL-01",
+          "asset_type": "Landfill Gas Well",
+          "plc_id": "PLC-005",
+          "sensor_package_id": "GAS-ANALYZER-005",
+          "waste_stream": "Municipal Solid Waste",
+          "process_area": "Landfill Gas Collection"
+        },
+        {
+          "asset_id": "WELL-02",
+          "asset_type": "Landfill Gas Well",
+          "plc_id": "PLC-006",
+          "sensor_package_id": "GAS-ANALYZER-006",
+          "waste_stream": "Municipal Solid Waste",
+          "process_area": "Landfill Gas Collection"
+        }
+      ]
+    }
+  ]
+}
